@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A00C5E93-2AE4-447E-B251-70F0A03B7C7A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aaron.Core</RootNamespace>
+    <AssemblyName>Aaron.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.4.3.1\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\Aaron.Libraries\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AaronException.cs" />
+    <Compile Include="Analysis\AnalysisFactory.cs" />
+    <Compile Include="Analysis\Config\AnalysisSetting.cs" />
+    <Compile Include="Analysis\Config\IAnalysisSetting.cs" />
+    <Compile Include="Analysis\Google.cs" />
+    <Compile Include="Analysis\IAnalysis.cs" />
+    <Compile Include="BaseEntity.cs" />
+    <Compile Include="BaseEntityTypeConfiguration.cs" />
+    <Compile Include="Caching\CacheExtensions.cs" />
+    <Compile Include="Caching\ICacheManager.cs" />
+    <Compile Include="Caching\MemoryCacheManager.cs" />
+    <Compile Include="ComponentModel\GenericListTypeConverter.cs" />
+    <Compile Include="Domain\Configuration\Setting.cs" />
+    <Compile Include="Domain\Messages\Campaign.cs" />
+    <Compile Include="Domain\Messages\MessageTemplateSettings.cs" />
+    <Compile Include="Domain\Messages\NewsLetterSubscription.cs" />
+    <Compile Include="Domain\Messages\QueuedEmail.cs" />
+    <Compile Include="Domain\Tasks\ScheduleTask.cs" />
+    <Compile Include="Services\Messages\CampaignService.cs" />
+    <Compile Include="Services\Messages\ICampaignService.cs" />
+    <Compile Include="Services\Messages\IQueuedEmailService.cs" />
+    <Compile Include="Services\Messages\ITokenizer.cs" />
+    <Compile Include="Services\Messages\QueuedEmailService.cs" />
+    <Compile Include="Services\Messages\QueuedMessagesSendTask.cs" />
+    <Compile Include="Services\Messages\Token.cs" />
+    <Compile Include="Services\Configuration\ISettingService.cs" />
+    <Compile Include="Services\Configuration\SettingService.cs" />
+    <Compile Include="Services\Messages\EmailAccountService.cs" />
+    <Compile Include="Services\Messages\IEmailAccountService.cs" />
+    <Compile Include="Services\Messages\Tokenizer.cs" />
+    <Compile Include="Services\Tasks\IScheduleTaskService.cs" />
+    <Compile Include="Services\Tasks\ScheduleTaskService.cs" />
+    <Compile Include="Services\Tasks\TaskManager.cs" />
+    <Compile Include="Services\Tasks\TaskThread.cs" />
+    <Compile Include="Services\Tasks\XTask.cs" />
+    <Compile Include="SysConfiguration\ISysConfigurationProvider.cs" />
+    <Compile Include="SysConfiguration\ISettings.cs" />
+    <Compile Include="Data\DataProviderManager.cs" />
+    <Compile Include="Data\DataSettings.cs" />
+    <Compile Include="Data\DataHelper.cs" />
+    <Compile Include="Data\DataSettingsManager.cs" />
+    <Compile Include="Data\IDataProvider.cs" />
+    <Compile Include="Data\ImplRepository.cs" />
+    <Compile Include="Data\IContext.cs" />
+    <Compile Include="Data\IRepository.cs" />
+    <Compile Include="Domain\Messages\EmailAccount.cs" />
+    <Compile Include="Domain\Messages\EmailAccountSettings.cs" />
+    <Compile Include="IEntityReference.cs" />
+    <Compile Include="Infrastructure\Config\RegisterTypeConfig.cs" />
+    <Compile Include="Infrastructure\DependencyResolverFactory.cs" />
+    <Compile Include="Infrastructure\IDependencyResolver.cs" />
+    <Compile Include="Infrastructure\IDependencyResolverFactory.cs" />
+    <Compile Include="Infrastructure\IoC.cs" />
+    <Compile Include="Infrastructure\UnityPerExecutionContextLifetimeManager.cs" />
+    <Compile Include="IPagedList.cs" />
+    <Compile Include="PagedList.cs" />
+    <Compile Include="PagedListExtension.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\Authentication\IAuthentication.cs" />
+    <Compile Include="Security\EDO\EDObjectContext.cs" />
+    <Compile Include="Security\EDO\EDObject.cs" />
+    <Compile Include="Security\EDO\ISerializable.cs" />
+    <Compile Include="SEOEntity.cs" />
+    <Compile Include="SEOEntityTypeConfiguration.cs" />
+    <Compile Include="Services\Messages\EmailSender.cs" />
+    <Compile Include="Services\Messages\IEmailSender.cs" />
+    <Compile Include="SocialNetwork\Facebook.cs" />
+    <Compile Include="SysConfiguration\SysConfigurationProvider.cs" />
+    <Compile Include="Threading\ITask.cs" />
+    <Compile Include="Threading\IThreadManager.cs" />
+    <Compile Include="Threading\Task.cs" />
+    <Compile Include="Threading\ThreadExtensions.cs" />
+    <Compile Include="Threading\ThreadManager.cs" />
+    <Compile Include="Utility\CommonHelper.cs" />
+    <Compile Include="Utility\Image\Config\HomeLogoSetting.cs" />
+    <Compile Include="Utility\Image\Config\IHomeLogoSetting.cs" />
+    <Compile Include="Utility\Image\Config\IImageSetting.cs" />
+    <Compile Include="Utility\Image\Config\ImageSetting.cs" />
+    <Compile Include="Utility\Image\Config\ImageSettingContext.cs" />
+    <Compile Include="Utility\Image\ImageHelper.cs" />
+    <Compile Include="Utility\Paging\Config\IPageSetting.cs" />
+    <Compile Include="Utility\Paging\Config\PageSetting.cs" />
+    <Compile Include="Utility\Paging\Config\PageSettingContext.cs" />
+    <Compile Include="Utility\Paging\PageHelper.cs" />
+    <Compile Include="Utility\PasswordHelper.cs" />
+    <Compile Include="Utility\Setting\ISettingHelper.cs" />
+    <Compile Include="Utility\MimeHelper.cs" />
+    <Compile Include="Utility\Setting\SettingHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Setting\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
